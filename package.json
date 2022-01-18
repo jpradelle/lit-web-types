@@ -1,0 +1,8 @@
+{
+  "name": "lit-web-types",
+  "version": "0.1.0",
+  "license": "BSD-3-Clause",
+  "web-types": [
+    "./web-types.json"
+  ]
+}

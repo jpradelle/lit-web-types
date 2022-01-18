@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json.schemastore.org/web-types",
+  "name": "lit-web-types",
+  "default-icon": "icon/lit.png",
+  "js-types-syntax": "typescript",
+  "version": "0.1.0",
+  "framework": "lit",
+  "framework-config": {
+    "enable-when": {
+      "node-packages": [
+        "lit"
+      ]
+    }
+  },
+  "contributions": {
+    "html": {
+      "attributes": [
+        {
+          "name": "Event listeners",
+          "description": "Event listeners expression",
+          "doc-url": "https://lit.dev/docs/templates/expressions/#event-listener-expressions",
+          "value": {
+            "kind": "expression",
+            "type": "any",
+            "required": true
+          },
+          "virtual": true,
+          "pattern": {
+            "or": [
+              {
+                "items": [
+                  "/html/events",
+                  "/js/events"
+                ],
+                "template": [
+                  "@",
+                  "#...",
+                  "#item:event name"
+                ],
+                "priority": "normal"
+              },
+              {
+                "template": [
+                  {
+                    "regex": "@[-a-z0-9]+"
+                  }
+                ],
+                "priority": "lowest"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Boolean Attributes",
+          "description": "Boolean Attributes expression",
+          "doc-url": "https://lit.dev/docs/templates/expressions/#boolean-attribute-expressions",
+          "value": {
+            "kind": "expression",
+            "type": "boolean",
+            "required": true
+          },
+          "virtual": true,
+          "pattern": {
+            "items": "/html/attributes",
+            "template": [
+              "?",
+              "#...",
+              "#item:attribute name"
+            ]
+          }
+        },
+        {
+          "name": "Properties",
+          "description": "Properties expression",
+          "doc-url": "https://lit.dev/docs/templates/expressions/#property-expressions",
+          "value": {
+            "kind": "expression",
+            "type": "any",
+            "required": true
+          },
+          "virtual": true,
+          "pattern": {
+            "items": "/js/properties",
+            "template": [
+              ".",
+              "#...",
+              "#item:property name"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
