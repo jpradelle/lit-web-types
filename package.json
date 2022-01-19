@@ -4,5 +4,12 @@
   "license": "BSD-3-Clause",
   "web-types": [
     "./web-types.json"
-  ]
+  ],
+  "scripts": {
+    "bump": "replace-json-property ./web-types.json version $npm_package_version -s 2",
+    "version": "npm run bump && git add -A"
+  },
+  "devDependencies": {
+    "replace-json-property": "^1.8.0"
+  }
 }
