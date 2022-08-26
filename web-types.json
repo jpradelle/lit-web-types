@@ -3,7 +3,7 @@
   "name": "lit-web-types",
   "default-icon": "icon/lit.png",
   "js-types-syntax": "typescript",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "framework": "lit",
   "framework-config": {
     "enable-when": {
